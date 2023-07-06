@@ -16,7 +16,7 @@ const ModalTask = ({ modalVisible, setModalVisible, taskActive, makeCompleted, d
                <View style={styles.buttonContainer}>
                   <Pressable
                      style={[styles.button, taskActive.completed ? styles.buttonDone : styles.buttonNotYet]}
-                     onPress={() => {makeCompleted(taskActive.task)
+                     onPress={() => {makeCompleted(taskActive.id)
                         setModalVisible(!modalVisible)}}
                   >
                      <Text style={styles.textStyle}>{taskActive.completed ? 'Marcar como pendiente' : 'Marcar como completa'}</Text>
@@ -24,7 +24,7 @@ const ModalTask = ({ modalVisible, setModalVisible, taskActive, makeCompleted, d
 
                   <Pressable
                      style={[styles.button, styles.buttonDelete]}
-                     onPress={() => {deleteTask(taskActive.task)
+                     onPress={() => {deleteTask(taskActive.id)
                         setModalVisible(!modalVisible)}}>
                      <Text style={styles.textStyle}>Eliminar</Text>
                   </Pressable>

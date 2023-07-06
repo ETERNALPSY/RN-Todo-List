@@ -6,6 +6,7 @@ import ModalTask from '../components/Modal'
 
 const initialState = {
    task: '',
+   id:0,
    completed: false,
 }
 
@@ -29,16 +30,18 @@ const MainScreen = () => {
       setModalVisible(!modalVisible)
    }
 
-   const makeCompleted = (taskModal) => {
-      const newTask = list.map((item) => {
-         item.task === taskModal && (item.completed = !item.completed)
+   const makeCompleted = (taskCompleted) => {
+      const newTask = list.map((item, index) => {
+         index === taskCompleted && (item.completed = !item.completed)
          return item;
       })
       setList(newTask)
+      
+      console.log(taskActive)
    }
 
    const deleteTask = (taskDeleted) => {
-      const taskToDelete = list.filter((item) => item.task != taskDeleted)
+      const taskToDelete = list.filter((item, index) => index !== taskDeleted)
       setList(taskToDelete)
    }
 
@@ -55,6 +58,7 @@ const MainScreen = () => {
          <TaskList
             list={list}
             onPressTask={onPressTask}
+            setList={setList}
          />
          <ModalTask
             modalVisible={modalVisible}

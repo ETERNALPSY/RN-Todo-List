@@ -13,7 +13,8 @@ const TopBar = ({ input, setInput, list, initialState, setList }) => {
                   ...input,
                   task: target
             })
-            }} />
+            }} 
+         />
          <TouchableOpacity
             style={styles.buttonAdd}
             onPress={() => {
