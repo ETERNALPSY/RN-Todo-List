@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { colors } from '../global/colors'
 
@@ -11,6 +11,11 @@ const Home = ({newList, setNewList}) => {
          >
             <Text style={styles.text}>Crear Nueva Lista</Text>
          </Pressable>
+         <Image
+            style={styles.img}
+            resizeMode='cover'
+            source={{uri:'https://picsum.photos/200'}}
+         />
       </View>
    )
 }
@@ -21,6 +26,7 @@ const styles = StyleSheet.create({
    home:{
       flex:5,
       width:'100%',
+      justifyContent:'space-around',
       alignItems:'center',
       backgroundColor:colors.navyBlue,
    },
@@ -32,6 +38,10 @@ const styles = StyleSheet.create({
    text:{
       fontSize:40,
       color:colors.white
+   },
+   img:{
+      width:400,
+      height:400,
+      borderRadius:400,
    }
-
 })
