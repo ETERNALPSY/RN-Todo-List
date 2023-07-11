@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Modal, Pressable } from 'react-native'
 import React from 'react'
+import { colors } from '../global/colors';
 
 const ModalTask = ({ modalVisible, setModalVisible, taskActive, makeCompleted, deleteTask }) => {
    return (
@@ -71,20 +72,20 @@ const styles = StyleSheet.create({
       elevation: 2,
    },
    buttonClose: {
-      backgroundColor: '#2196F3',
+      backgroundColor: colors.navyBlue,
    },
    buttonDone: {
-      backgroundColor: '#5C8984',
+      backgroundColor: colors.blue,
    },
    buttonNotYet: {
-      backgroundColor: '#FF2E63',
+      backgroundColor: colors.blue,
    },
    buttonDelete: {
-      backgroundColor: '#EE2B47',
+      backgroundColor: colors.red,
    },
    textStyle: {
       fontSize: 25,
-      color: 'white',
+      color: colors.white,
       fontWeight: 'bold',
       textAlign: 'center',
    },

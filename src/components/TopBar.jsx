@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { colors } from '../global/colors'
 
 const TopBar = ({ input, setInput, list, initialState, setList }) => {
    return (
@@ -31,19 +32,18 @@ export default TopBar
 
 const styles = StyleSheet.create({
    view1: {
-      flex: 2,
+      flex: 1,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#153462',
-      width: '100%',
+      backgroundColor: colors.navyBlue,
       padding:10
    },
    input: {
-      backgroundColor: '#FFF',
+      backgroundColor: colors.white,
       fontSize:30,
-      flex:2,
-      borderBottomColor: '#E13A9D',
+      flex:3,
+      borderBottomColor: colors.red,
       borderBottomWidth: 3,
       padding: 10,
       marginRight:10,
@@ -51,17 +51,16 @@ const styles = StyleSheet.create({
 
    },
    buttonAdd: {
-      color: '#252A34',
       flex:1,
       alignItems: 'center',
       paddingVertical:10,
       paddingHorizontal:5,
-      backgroundColor: '#E13A9D',
+      backgroundColor: colors.blue,
       borderRadius: 10
    },
    buttonAddText:{
-      color: '#FCFFE7',
-      fontSize:30,
+      color: colors.white,
+      fontSize:25,
       textAlign:'center',
    }
 })
