@@ -2,20 +2,21 @@ import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { colors } from '../global/colors'
 
-const Home = ({newList, setNewList}) => {
+const Home = ({navigation}) => {
    return (
       <View style={styles.home}>
          <Pressable
             style={styles.new}
-            onPress={ () => setNewList(!newList )}
+            onPress={ () => navigation.navigate('Lista de Pendientes')}
          >
             <Text style={styles.text}>Crear Nueva Lista</Text>
          </Pressable>
-         <Image
-            style={styles.img}
-            resizeMode='cover'
-            source={{uri:'https://picsum.photos/200'}}
-         />
+         <Pressable
+            style={styles.new}
+            onPress={ () => navigation.navigate('Pokemon')}
+         >
+            <Text style={styles.text}>Galería Pokemon</Text>
+         </Pressable>
       </View>
    )
 }
@@ -38,10 +39,5 @@ const styles = StyleSheet.create({
    text:{
       fontSize:40,
       color:colors.white
-   },
-   img:{
-      width:400,
-      height:400,
-      borderRadius:400,
    }
 })

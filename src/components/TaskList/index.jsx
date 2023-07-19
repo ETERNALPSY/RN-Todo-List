@@ -3,7 +3,7 @@ import React from 'react'
 import RenderItemTask from './RenderItemTask'
 import { colors } from '../../global/colors'
 
-const TaskList = ({ list, onPressTask, setList, newList, setNewList }) => {
+const TaskList = ({ list, onPressTask, setList, navigation }) => {
    return (
       <View style={styles.view2}>
          <FlatList
@@ -15,7 +15,7 @@ const TaskList = ({ list, onPressTask, setList, newList, setNewList }) => {
          { (list.length === 0) ||
             <Pressable
                onPress={()=> {
-                  setNewList(!newList) 
+                  navigation.navigate('Home')
                   setList([])} }
                style={styles.deleteList}>
                <Text style={styles.deleteText}>Borrar Lista</Text>
