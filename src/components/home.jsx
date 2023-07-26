@@ -11,12 +11,6 @@ const Home = ({navigation}) => {
          >
             <Text style={styles.text}>Crear Nueva Lista</Text>
          </Pressable>
-         <Pressable
-            style={styles.new}
-            onPress={ () => navigation.navigate('Pokemon')}
-         >
-            <Text style={styles.text}>Galería Pokemon</Text>
-         </Pressable>
       </View>
    )
 }

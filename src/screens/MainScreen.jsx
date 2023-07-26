@@ -1,9 +1,8 @@
 import { StyleSheet, View } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import TopBar from '../components/TopBar'
 import TaskList from '../components/TaskList'
 import ModalTask from '../components/Modal'
-import Header from '../components/header'
 
 
 const initialState = {

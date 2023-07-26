@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import RenderCharacters from '../components/CharacterCardList/RenderCharacters'
-
+import { colors } from '../global/colors'
 
 const Pokemon = ({ navigation }) => {
 
@@ -19,9 +19,10 @@ const Pokemon = ({ navigation }) => {
 export default Pokemon
 
 const styles = StyleSheet.create({
-   container:{
+   container: {
       flex: 1,
-      width:'100%',
-      
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: colors.navyBlue     
    }
 })

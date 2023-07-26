@@ -1,44 +1,70 @@
-import { SafeAreaView, StyleSheet, Platform, StatusBar } from 'react-native'
+import { SafeAreaView, StyleSheet, Platform, StatusBar, View } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-//screens
-import Home from '../components/home'
-import Pokemon from '../screens/Pokemon'
-import CharacterDetail from '../screens/CharacterDetail'
-import MainScreen from '../screens/MainScreen'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { colors } from '../global/colors'
+import { MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
+//stacks
+import ToDoStack from './ToDoStack'
+import PokemonStack from './PokemonStack'
+//screens
+import Counter from '../screens/Counter'
 
-const Stack = createNativeStackNavigator()
+
+const Tab = createBottomTabNavigator()
 
 const Navigator = () => {
    return (
       <SafeAreaView style={styles.container}>
          <NavigationContainer>
-            <Stack.Navigator
-               screenOptions={
-                  {
-                     headerShown:false
-                  }
-               }
+            <Tab.Navigator
+               screenOptions={{
+                  headerShown: false,
+                  tabBarShowLabel: false,
+                  tabBarStyle: styles.tabBar,
+                  tabBarHideOnKeyboard: true
+               }}
             >
-               <Stack.Screen
-                  name='Home'
-                  component={Home}
+               <Tab.Screen
+                  name='To Do list'
+                  component={ToDoStack}
+                  options={{
+                     tabBarIcon: ({ focused }) => {
+                        return (
+                           <View>
+                              <MaterialCommunityIcons name="format-list-checks" size={24} color={focused ? colors.white : colors.blue} />
+                           </View>
+                        )
+                     }
+                  }}
                />
-               <Stack.Screen
-                  name='Lista de Pendientes'
-                  component={MainScreen}
+               <Tab.Screen
+                  name='Pokemon Gallery'
+                  component={PokemonStack}
+                  options={{
+                     tabBarIcon: ({ focused }) => {
+                        return (
+                           <View>
+                              <SimpleLineIcons name="picture" size={24} color={focused ? colors.white : colors.blue} />
+                           </View>
+                        )
+                     }
+                  }}
                />
-               <Stack.Screen
-                  name='Pokemon'
-                  component={Pokemon}
+               <Tab.Screen
+                  name='Counter'
+                  component={Counter}
+                  options={{
+                     tabBarIcon: ({ focused }) => {
+                        return (
+                           <View>
+                              <MaterialCommunityIcons name="counter" size={24} color={focused ? colors.white : colors.blue} />
+                           </View>
+                        )
+                     }
+                  }}
                />
-               <Stack.Screen
-                  name='Character Detail'
-                  component={CharacterDetail}
-               />
-            </Stack.Navigator>
+            </Tab.Navigator>
          </NavigationContainer>
       </SafeAreaView>
    )
@@ -50,6 +76,13 @@ const styles = StyleSheet.create({
    container: {
       flex: 1,
       paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-      backgroundColor:colors.navyBlue
+      backgroundColor: colors.navyBlue
    },
+   tabBar: {
+      alignSelf: 'center',
+      width: '100%',
+      backgroundColor: colors.navyBlue,
+      borderTopWidth: 2,
+      borderTopColor: colors.blue
+   }
 })
