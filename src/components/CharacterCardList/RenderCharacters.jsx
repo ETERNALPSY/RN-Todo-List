@@ -15,6 +15,7 @@ const RenderCharacters = ({ navigation }) => {
             item={item}
             navigation={navigation}
          />}
+         centerContent={true}
       />
 
 

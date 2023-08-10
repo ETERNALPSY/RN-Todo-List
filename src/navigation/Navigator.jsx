@@ -3,10 +3,12 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { colors } from '../global/colors'
-import { MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
+//icons
+import { MaterialCommunityIcons, SimpleLineIcons, Ionicons } from '@expo/vector-icons';
 //stacks
 import ToDoStack from './ToDoStack'
 import PokemonStack from './PokemonStack'
+import ProfileStack from './ProfileStack'
 //screens
 import Counter from '../screens/Counter'
 
@@ -59,6 +61,19 @@ const Navigator = () => {
                         return (
                            <View>
                               <MaterialCommunityIcons name="counter" size={24} color={focused ? colors.white : colors.blue} />
+                           </View>
+                        )
+                     }
+                  }}
+               />
+               <Tab.Screen
+                  name='MyProfile'
+                  component={ProfileStack}
+                  options={{
+                     tabBarIcon: ({ focused }) => {
+                        return (
+                           <View>
+                              <Ionicons name="person-circle-outline" size={24} color={focused ? colors.white : colors.blue} />
                            </View>
                         )
                      }

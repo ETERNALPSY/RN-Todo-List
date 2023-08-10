@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard } from 'react-native'
 import React from 'react'
 import { colors } from '../global/colors'
 
 const TopBar = ({ input, setInput, list, initialState, setList }) => {
    return (
-      <View style={styles.view1}>
+      <View style={styles.container}>
          <TextInput
             style={styles.input}
             placeholder='Nueva Tarea'
@@ -21,7 +21,9 @@ const TopBar = ({ input, setInput, list, initialState, setList }) => {
             onPress={() => {
                input.task && setList([...list, input])
                setInput(initialState)
-            }}>
+               Keyboard.dismiss()
+            }}
+         >
             <Text style={styles.buttonAddText}>Agregar Tarea</Text>
          </TouchableOpacity>
       </View>
@@ -31,13 +33,11 @@ const TopBar = ({ input, setInput, list, initialState, setList }) => {
 export default TopBar
 
 const styles = StyleSheet.create({
-   view1: {
-      flex: 1,
+   container: {
       flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: colors.navyBlue,
-      padding:10
+      borderRadius:10,
+      overflow:'hidden',
+      marginVertical:10
    },
    input: {
       backgroundColor: colors.white,
@@ -45,9 +45,7 @@ const styles = StyleSheet.create({
       flex:3,
       borderBottomColor: colors.red,
       borderBottomWidth: 3,
-      padding: 10,
-      marginRight:10,
-      borderRadius:10
+      paddingHorizontal: 10,
 
    },
    buttonAdd: {
@@ -55,8 +53,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       paddingVertical:10,
       paddingHorizontal:5,
-      backgroundColor: colors.blue,
-      borderRadius: 10
+      backgroundColor: colors.red,
    },
    buttonAddText:{
       color: colors.white,

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import TopBar from '../components/TopBar'
 import TaskList from '../components/TaskList'
 import ModalTask from '../components/Modal'
+import { colors } from '../global/colors'
 
 
 const initialState = {
@@ -67,15 +68,8 @@ export default MainScreen
 const styles = StyleSheet.create({
    container: {
       flex: 1,
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
+      backgroundColor: colors.navyBlue,
+      padding:10,
+      gap:10
    },
 })
-
-
-//{list.map(item =>
-//   <View style={styles.task} key={item.id}>
-//      <Text >{item.task}</Text>
-//   </View>
-//)}

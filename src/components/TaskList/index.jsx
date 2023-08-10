@@ -31,13 +31,10 @@ const styles = StyleSheet.create({
    view2: {
       flex: 5,
       alignItems: 'center',
-      backgroundColor: colors.navyBlue,
       width: '100%',
-      paddingVertical: 15,
    },
    flat: {
       width: '100%',
-      padding: 10,
    },
    deleteList: {
       backgroundColor: colors.red,

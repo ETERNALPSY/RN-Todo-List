@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
       marginTop: 22,
    },
    modalView: {
-      margin: 20,
       backgroundColor: 'white',
       borderRadius: 20,
       padding: 35,
@@ -91,11 +90,10 @@ const styles = StyleSheet.create({
    },
    modalText: {
       fontSize:40,
-      marginBottom: 15,
       textAlign: 'center',
    },
    buttonContainer: {
-      gap:10,
+      gap:15,
       justifyContent: 'space-between',
       alignItems: 'center'
    }

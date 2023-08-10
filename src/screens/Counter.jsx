@@ -26,7 +26,7 @@ const Counter = () => {
                keyboardType='decimal-pad'
             />
             <Pressable
-               style={[styles.functionButton, styles.add]}
+
                onPress={() => {
                   dispatch(incrementByAmount(Number(inputValue)))
                   setInputValue('')
@@ -84,21 +84,15 @@ const styles = StyleSheet.create({
       borderRadius: 10
    },
    addWrapper: {
-      flexDirection: 'row'
+      borderRadius: 10,
+      overflow: 'hidden',
+      flexDirection: 'row',
    },
    input: {
       flex: 1,
-      height: '100%',
-      borderTopLeftRadius: 10,
-      borderBottomLeftRadius: 10,
       backgroundColor: colors.white,
       fontSize: 25,
       paddingLeft: 10
-   },
-   add: {
-      height: '100%',
-      borderBottomLeftRadius: 0,
-      borderTopLeftRadius: 0,
    },
    buttonWrapper: {
       flexDirection: 'row',
